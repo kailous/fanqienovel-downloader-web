@@ -35,3 +35,14 @@ else
     green_echo "项目已初始化，正在启动..."
     start
 fi
+
+# 判断是否安装了 pandoc 没有则安装
+if ! command -v pandoc &> /dev/null; then
+    # 判断是否安装了 brew
+    if ! command -v brew &> /dev/null; then
+        yellow_echo "未安装 brew，正在安装..."
+        /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+    fi
+        yellow_echo "未安装 pandoc，正在安装..."
+    brew install pandoc
+fi

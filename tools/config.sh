@@ -1,5 +1,6 @@
 #!/bin/bash
 EXPORT_DIR="./export"
+DOC_DIR="./output/doc/"
 DOWNLOAD_DIR="./downloads"
 EPUB_TYPE="application/epub+zip"
 MOBI_TYPE="application/x-mobipocket-ebook"

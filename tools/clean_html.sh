@@ -52,8 +52,14 @@ function clean_html_files() {
         OUTPUT_FILE="$EXPORT_FILES_DIR/$FILENAME"
         
         # 删除 <div class="navigation"> ... </div> 部分并输出到新文件
+        # 删除 <style> ... </style> 部分并输出到新文件
+        # 删除所有 <h1> 标签
         sed '/<div class="navigation">/,/<\/div>/d' "$FILE" | \
         sed '/<style>/,/<\/style>/d' > "$OUTPUT_FILE"
+
+        # sed '/<div class="navigation">/,/<\/div>/d' "$FILE" | \
+        # sed '/<style>/,/<\/style>/d' | \
+        # sed -E 's/<h1>[^<]*<\/h1>//g' > "$OUTPUT_FILE"
     done
 
     green_echo "所有 HTML 文件处理完毕。"
