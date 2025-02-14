@@ -18,6 +18,8 @@ build/
 develop-eggs/
 dist/
 downloads/
+export/
+output/
 eggs/
 .eggs/
 lib/

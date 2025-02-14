@@ -22,7 +22,9 @@ app.config['SECRET_KEY'] = 'fanqie_novel_downloader'  # Add secret key
 socketio = SocketIO(app, async_mode='gevent', cors_allowed_origins='*')
 
 # Create downloads directory
-downloads_dir = os.path.join(os.path.dirname(__file__), 'novel_downloads')
+# downloads_dir = os.path.join(os.path.dirname(__file__), 'novel_downloads')
+# 修改文件夹位置
+downloads_dir = os.path.join(os.path.dirname(__file__), '..', 'downloads')
 os.makedirs(downloads_dir, exist_ok=True)
 
 # Create a global downloader instance with proper save path
